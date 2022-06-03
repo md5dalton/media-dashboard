@@ -13,7 +13,7 @@ const LargeCard = ({ username, platform, followers, change }) => (
             <div className="text">followers</div>
           </div>
           <div className={`change${change < 0 ? " down" : ""}`}>
-            <img className="caret" src={`images/icon-${change < 0 ? "down" : "up"}.svg`} />
+            <img className="caret" alt="change caret" src={`images/icon-${change < 0 ? "down" : "up"}.svg`} />
             <span>{`${Math.abs(change)} Today`}</span>
           </div>
     </div>
@@ -25,7 +25,7 @@ const SmallCard = ({ param, platform, count, change }) => (
         <img className="platform-icon" src={`images/icon-${platform}.svg`} alt={platform} />
         <div className="count">{count}</div>
         <div className={`change${change < 0 ? " down" : ""}`}>
-          <img className="caret" src={`images/icon-${change < 0 ? "down" : "up"}.svg`} />
+          <img className="caret" alt="change caret" src={`images/icon-${change < 0 ? "down" : "up"}.svg`} />
           <span>{`${Math.abs(change)} Today`}</span>
         </div>
     </div>
