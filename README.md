@@ -1,2 +1,2 @@
-# media-dashboard
- Media Dashboard with React
+# Social media-dashboard
+ Social Media Dashboard with React
