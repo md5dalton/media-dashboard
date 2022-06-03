@@ -1,0 +1,51 @@
+@use '../../../../styles/util' as *
+
+.toggle 
+    display: flex
+    align-items: center
+
+    @include breakpoint-down(small)
+        border-top: 2px solid var(--color-border)
+        margin-top: 2em
+        padding-top: 1em
+        justify-content: space-between
+    
+    label 
+        color: var(--color-text-desaturated)
+        font-weight: 700
+        order: -1
+        
+        &:before 
+            content: "Dark Mode"
+            display: block
+    
+    input 
+        padding: 3px
+        width: 48px
+        height: 24px
+        margin-left: 18px
+        border-radius: 20px
+        display: flex
+        appearance: none
+        position: relative
+        background-image: var(--bg-toggle)
+        transition: all .1s ease-out
+        
+        &:after 
+            content: ""
+            display: block
+            position: absolute
+            left: 3px
+            width: 18px
+            height: 18px
+            border-radius: 50%
+            background-color: var(--color-bg-top-pattern)
+            transition: all .1s ease-out
+        
+        &:checked:after 
+            // x = input-width - input-padding-left-right - 2 switcher-width
+            // width + padding-left + x?
+            left: 27px
+        
+        &:checked + label:before 
+            content: "Light Mode"
