@@ -84,12 +84,12 @@ const overview = [
 
 export default () => (
     <main>
-        <section className="users">
+        <div className="users">
             <CardList items={users} itemHandler={(item, index) => <LargeCard key={index} {...item} />} />
-        </section>
-        <section className="overview">
+        </div>
+        <div className="overview">
             <h2>Overview - Today</h2>
             <CardList items={overview} itemHandler={(item, index) => <SmallCard key={index} {...item} />} />
-        </section>
+        </div>
     </main>
 )

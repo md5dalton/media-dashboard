@@ -4,15 +4,18 @@ import './styles.sass'
 
 export default () => {
     
-    const [ theme, setTheme ] = useState('light')
+    const defaultTheme = "light"
 
     const getTheme = () => localStorage.getItem("theme")
+
+    const [ theme, setTheme ] = useState(getTheme())
     
     const toggleTheme = () => {
 
-        const savedTheme = getTheme()
+        const theme = getTheme()
 
-        const newTheme = savedTheme === "light" ? "dark" : "light"
+        let newTheme = theme !== defaultTheme ? defaultTheme : "dark"  
+        if (!theme) newTheme = "dark"
         
         localStorage.setItem("theme", newTheme)
 
@@ -21,18 +24,14 @@ export default () => {
     }
 
     useEffect(() => {
-
-        const savedTheme = getTheme()
-
-        document.body.classList.remove("light", "dark")
-        document.body.classList.add(savedTheme)
-
+        document.body.classList.remove(defaultTheme, "dark")
+        if (theme) document.body.classList.add(theme)
     })
 
     return (
         <div className="toggle">
-            <input type="checkbox" id="theme" checked={getTheme() === "dark" ? true : false} onChange={toggleTheme} />
-            <label htmlFor="theme"></label>
+            <label htmlFor="theme">{theme || defaultTheme} mode</label>
+            <input type="checkbox" id="theme" checked={theme === "dark" ? true : false} onChange={toggleTheme} />
         </div>
     )
 }
