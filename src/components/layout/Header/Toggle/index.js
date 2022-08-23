@@ -26,11 +26,11 @@ export default () => {
 
     useEffect(() => {
         document.body.classList.remove(defaultTheme, altTheme)
-        document.body.classList.add(theme, defaultTheme)
+        document.body.classList.add(theme || defaultTheme)
     })
 
     return (
-        <div className="toggle">
+        <div className="theme-toggler">
             <label htmlFor="theme">{theme || defaultTheme} mode</label>
             <input type="checkbox" id="theme" checked={theme === altTheme ? true : false} onChange={toggleTheme} />
         </div>
