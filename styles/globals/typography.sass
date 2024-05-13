@@ -1,0 +1,35 @@
+@use '../util' as *
+
+h1, 
+h2, 
+h3 
+    margin-top: 0
+    line-height: 1.1
+
+h1 
+    font-size: 24px
+    margin-bottom: 3px
+
+    @include breakpoint(large) 
+        font-size: 28px
+    
+
+
+a, 
+a:visited, 
+a:active 
+    text-decoration: none
+
+.text
+    &-sm 
+        font-size: 14px
+    
+    &-md 
+        font-size: 18px
+    
+    &-lg 
+        font-size: 32px
+    
+    &-xx-lg 
+        font-size: 40px
+    
