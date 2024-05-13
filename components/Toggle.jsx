@@ -31,7 +31,11 @@ export default () => {
     })
 
     return (
-        <div className="theme-toggler">
+        <div className="
+            theme-toggler
+            flex items-center mt-8 pt-4 justify-between
+            md:mt-0 md:pt-0 md:justify-normal md:border-none
+            border-t-2 border-t-dark-grayish-blue dark:border-t-desaturated-blue">
             <label htmlFor="theme">{theme} mode</label>
             <input type="checkbox" id="theme" checked={theme !== altTheme ? true : false} onChange={toggleTheme} />
         </div>
